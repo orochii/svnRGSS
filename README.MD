@@ -4,6 +4,7 @@
 These are tools for easing the pains when working on RGSSS RPG Maker games and subversion control (Github, etc). The main purpose is to
 - Extract scripts into their separate plain text files (extension .rb).
 - Compile all binary files into YAML files, which are also simple text files.
+
 The motive of this is because of SVN systems having an easier time when dealing with text files, while binary files are usually from hard to impossible to work with when using subversion systems and repositories.
 It also includes an easy-to-use script extractor, which exposes scripts also as plain text files. As a secondary convenience this lets you use your preferred code editor instead of RPG Maker's built-in not-so-great one.
 
