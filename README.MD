@@ -18,7 +18,7 @@ Install the following software.
 Use default settings for both installations.
 
 ### Project setup
-After having installed Ruby, copy all files from this repository into your RPG Maker project's root file. Then run the file **install.rb** to extract all scripts.
+After having installed Ruby, copy all files from this repository into your RPG Maker project's root file. Then optionally run the file **install.rb** to extract all scripts.
 
 ### Usage
 These are instructions based on Github Desktop.
