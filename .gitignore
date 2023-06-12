@@ -1,0 +1,3 @@
+Data/*.rvdata2
+!Data/Scripts.rvdata2
+System/*
