@@ -21,5 +21,9 @@ require_relative 'audio'
 require_relative 'graphics'
 require_relative 'input'
 
-# RPG VX Ace data structures
-require_relative 'rpg'
+if $RGSS_VER==nil || $RGSS_VER > 1
+    # RPG VX Ace data structures
+    require_relative 'rpg3'
+else
+    require_relative 'rpg1'
+end
