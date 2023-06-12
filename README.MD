@@ -20,7 +20,6 @@ After having installed Ruby, copy all files from this repository into your RPG M
 
 ### Usage
 These are instructions based on Github Desktop.
-- From this project main page (https://github.com/OzzyTheOne/RMN-Dream-Team), click on the green "Code" button, and select Open with **Github Desktop**. Follow those instructions, but make sure to take note at the location where it will copy the files.
 - When working, remember to always press **fetch** in the **Github Desktop** application. Then go to the project, and double click the file **pack.rb**. 
 - Make any changes in the RPG Maker editor, then after closing the editor, double click on **unpack.rb**.
 - Finally, use the Github Desktop application to commit any changes made.
