@@ -1,4 +1,4 @@
-# SVN RM Compatibility Layer
+# SVN RGSS Compatibility Layer
 
 ## Introduction
 These are tools for easing the pains when working on RGSSS RPG Maker games and subversion control (Github, etc). The main purpose is to
