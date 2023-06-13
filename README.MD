@@ -35,3 +35,4 @@ This work is highly derivative, as it was based on work from others to cross-con
 - bluepixelmike - https://github.com/bluepixelmike/rpg-maker-rgss
 - Rakudayo - https://github.com/rakudayo/rmxp-plugin-system
 - Solistra - https://github.com/Solistra/rvpacker
+- Akesterson - https://github.com/akesterson/rpgskeleton/tree/master
