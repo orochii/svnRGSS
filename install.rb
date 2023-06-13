@@ -1,13 +1,22 @@
+#!/usr/bin/env ruby
+$LOAD_PATH << '.'
+$LOAD_PATH << 'Scripts/PackerLib'
+
+require 'packlib.rb'
+require 'zlib'
+
 SCRIPTS_FILENAMES = ["Data/Scripts.rxdata","Data/Scripts.rvdata","Data/Scripts.rvdata2"]
 USE_SCRIPT_IDX = true
-
-require 'zlib'
 
 # =============================================================================================================================================================
 # Utility tools
 # =============================================================================================================================================================
 def error(message)
-	puts message
+	puts message.red
+	%x[pause]
+end
+def warning(message)
+	puts message.yellow
 	%x[pause]
 end
 
@@ -34,7 +43,7 @@ def run
 		error("ERROR: Can't locate script file.\n")
 		return
 	else
-		puts "Found script file: #{_scriptFilename}"
+		puts "Found script file: #{_scriptFilename.green}"
 	end
 	
 	# Read scripts file
@@ -47,7 +56,7 @@ def run
 		return
 	end
 	if scripts[0][1]=="entrypoint"
-		error("WARNING: Already processed, exiting.")
+		warning("WARNING: Already processed, exiting.")
 		return
 	end
 	
@@ -63,7 +72,7 @@ def run
 		_name = "#{_prefix}#{s[1]}.rb"
 		_newFile = "Scripts/RPG/#{_name}"
 		# Write new file
-		print "\nWriting #{s[0]} : #{s[1]}\n to #{_newFile}\n"
+		print "\nWriting #{s[0]} : #{s[1]}\n to #{_newFile.green}\n"
 		s[2] = Zlib::Inflate.inflate(s[2])
 		s[2] = s[2].gsub("\r\n") {
 			"\n"
