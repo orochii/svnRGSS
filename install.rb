@@ -40,7 +40,8 @@ def sanitize_script_name(origName)
 end
 
 def check_for_utf8
-	fnames = Dir.glob("Scripts/RPG/*.rb") #
+	fnames = Dir.glob("Scripts/RPG/*.rb")
+	fnames +=Dir.glob("Scripts/*.rb")
 	# Open each, then add line if needed.
 	fnames.each {|fn|
 		script = File.read(fn)
