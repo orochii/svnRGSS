@@ -7,6 +7,7 @@ require 'zlib'
 
 SCRIPTS_FILENAMES = ["Data/Scripts.rxdata","Data/Scripts.rvdata","Data/Scripts.rvdata2"]
 USE_SCRIPT_IDX = true
+ENCODING_LINE = "# encoding: utf-8\n"
 
 # =============================================================================================================================================================
 # Utility tools
@@ -38,6 +39,22 @@ def sanitize_script_name(origName)
 	return _name
 end
 
+def check_for_utf8
+	fnames = Dir.glob("Scripts/RPG/*.rb") #
+	# Open each, then add line if needed.
+	fnames.each {|fn|
+		script = File.read(fn)
+		found = false
+		script.sub(/^#{ENCODING_LINE}/) { found = true}
+		if !found
+			script = ENCODING_LINE + script
+			save_file(fn,script)
+			puts "Added encoding line to #{fn}"
+		end
+	}
+	%x[pause]
+end
+
 # =============================================================================================================================================================
 # Main
 # =============================================================================================================================================================
@@ -61,14 +78,15 @@ def run
 		return
 	end
 	if scripts[0][1]=="entrypoint"
-		warning("WARNING: Already processed, exiting.")
+		puts "WARNING: Already processed, checking existing scripts for UTF-8 encoding.".yellow
+		check_for_utf8
 		return
 	end
 	
 	# Make sure RPG folder exists
 	Dir.mkdir("Scripts/RPG") unless File.directory?("Scripts/RPG")
 	# Build contents for RPG.rb
-	_rpgRB = "module RPG\n"
+	_rpgRB = ENCODING_LINE+"module RPG\n"
 
 	# Process scripts, save as files
 	scripts.each_with_index {|s,i|
@@ -83,7 +101,8 @@ def run
 		s[2] = s[2].gsub("\r\n") {
 			"\n"
 		}
-		save_file(_newFile,s[2])
+		_scriptBody = ENCODING_LINE + s[2]
+		save_file(_newFile,_scriptBody)
 		# Add to RPG.rb
 		_rpgRB += "\trequire \"#{_name}\"\n"
 	}
