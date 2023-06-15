@@ -14,3 +14,4 @@ module RPG
     attr_accessor :pages
   end
 end
+$PERMIT_CLASS.push RPG::Event

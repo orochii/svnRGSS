@@ -12,3 +12,4 @@ module RPG
     attr_accessor :atype_id
   end
 end
+$PERMIT_CLASS.push RPG::Armor

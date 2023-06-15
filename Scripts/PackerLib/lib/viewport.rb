@@ -21,17 +21,10 @@ class Viewport
   end
 
   attr_accessor :rect
-
   attr_accessor :visible
-
   attr_accessor :z
-
   attr_accessor :ox
-
   attr_accessor :oy
-
   attr_accessor :color
-
   attr_accessor :tone
-
 end

@@ -39,3 +39,4 @@ module RPG
     attr_accessor :terrain_tags
   end
 end
+$PERMIT_CLASS.push RPG::Tileset

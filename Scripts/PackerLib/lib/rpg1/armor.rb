@@ -36,3 +36,4 @@ module RPG
     attr_accessor :guard_state_set
   end
 end
+$PERMIT_CLASS.push RPG::Armor

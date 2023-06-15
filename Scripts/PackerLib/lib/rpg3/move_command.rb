@@ -8,3 +8,4 @@ module RPG
     attr_accessor :parameters
   end
 end
+$PERMIT_CLASS.push RPG::MoveCommand

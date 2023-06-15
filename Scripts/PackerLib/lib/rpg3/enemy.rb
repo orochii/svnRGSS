@@ -22,3 +22,4 @@ module RPG
     attr_accessor :actions
   end
 end
+$PERMIT_CLASS.push RPG::Enemy

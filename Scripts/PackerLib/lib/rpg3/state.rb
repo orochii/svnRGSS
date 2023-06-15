@@ -35,3 +35,4 @@ module RPG
     attr_accessor :message4
   end
 end
+$PERMIT_CLASS.push RPG::State

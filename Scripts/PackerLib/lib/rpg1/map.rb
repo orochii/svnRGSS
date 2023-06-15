@@ -26,3 +26,4 @@ module RPG
     attr_accessor :events
   end
 end
+$PERMIT_CLASS.push RPG::Map

@@ -23,3 +23,4 @@ module RPG
     attr_accessor :equips
   end
 end
+$PERMIT_CLASS.push RPG::Actor

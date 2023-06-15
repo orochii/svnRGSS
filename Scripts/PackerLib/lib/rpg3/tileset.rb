@@ -19,3 +19,4 @@ module RPG
     attr_accessor :note
   end
 end
+$PERMIT_CLASS.push RPG::Tileset

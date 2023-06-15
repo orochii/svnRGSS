@@ -33,3 +33,4 @@ module RPG
     attr_accessor :learnings
   end
 end
+$PERMIT_CLASS.push RPG::Class

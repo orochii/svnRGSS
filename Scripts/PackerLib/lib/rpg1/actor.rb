@@ -56,3 +56,4 @@ module RPG
     attr_accessor :armor4_fix
   end
 end
+$PERMIT_CLASS.push RPG::Actor

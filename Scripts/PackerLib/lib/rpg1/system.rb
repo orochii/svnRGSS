@@ -74,3 +74,4 @@ module RPG
     attr_accessor :edit_map_id
   end
 end
+$PERMIT_CLASS.push RPG::System

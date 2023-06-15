@@ -14,3 +14,4 @@ module RPG
     attr_accessor :animation_id
   end
 end
+$PERMIT_CLASS.push RPG::Weapon

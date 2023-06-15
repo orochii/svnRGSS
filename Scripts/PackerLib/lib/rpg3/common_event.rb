@@ -20,3 +20,4 @@ module RPG
     attr_accessor :list
   end
 end
+$PERMIT_CLASS.push RPG::CommonEvent

@@ -54,3 +54,4 @@ module RPG
     attr_accessor :treasure_prob
   end
 end
+$PERMIT_CLASS.push RPG::Enemy

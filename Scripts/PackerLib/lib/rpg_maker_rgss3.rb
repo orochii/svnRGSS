@@ -1,3 +1,5 @@
+$PERMIT_CLASS = []
+
 # Built-in functions
 require_relative 'functions'
 

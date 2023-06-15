@@ -48,10 +48,16 @@ def yaml_to_data(srcfolder, dstfolder, filename, ext="yaml")
     # Open YAML file
     begin
         File.open( filename, "r+" ) do |yamlfile|
-            data = YAML::load(yamlfile)
+            if YAML::respond_to?(:load_file)
+                data = YAML::load_file(yamlfile, 
+                permitted_classes: $PERMIT_CLASS)
+            else
+                data = YAML::load(yamlfile)
+            end
         end
     rescue
-        puts "Failed when opening file #{filename}!"
+        puts "Failed when opening file #{filename.red}!"
+        puts $!.message
         return
     end
     # Save as data file

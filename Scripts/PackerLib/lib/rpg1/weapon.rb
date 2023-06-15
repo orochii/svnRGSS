@@ -38,3 +38,4 @@ module RPG
     attr_accessor :minus_state_set
   end
 end
+$PERMIT_CLASS.push RPG::Weapon

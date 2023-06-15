@@ -15,3 +15,4 @@ module RPG
     attr_accessor :consumable
   end
 end
+$PERMIT_CLASS.push RPG::Item

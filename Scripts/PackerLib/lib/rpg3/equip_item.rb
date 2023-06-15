@@ -11,3 +11,4 @@ module RPG
     attr_accessor :params
   end
 end
+$PERMIT_CLASS.push RPG::EquipItem

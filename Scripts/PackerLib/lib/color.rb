@@ -38,3 +38,4 @@ class Color
     Color.new(*s.unpack('d4'))
   end
 end
+$PERMIT_CLASS.push Color

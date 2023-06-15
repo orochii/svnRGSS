@@ -20,3 +20,4 @@ module RPG
     attr_accessor :timings
   end
 end
+$PERMIT_CLASS.push RPG::Animation

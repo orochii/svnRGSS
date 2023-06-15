@@ -28,3 +28,4 @@ module RPG
     attr_accessor :pos
   end
 end
+$PERMIT_CLASS.push RPG::BGS

@@ -20,3 +20,4 @@ module RPG
     attr_accessor :required_wtype_id2
   end
 end
+$PERMIT_CLASS.push RPG::Skill

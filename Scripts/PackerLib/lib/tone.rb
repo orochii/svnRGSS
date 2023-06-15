@@ -38,3 +38,4 @@ class Tone
     @gray  = [[val.to_f, 0.0].max, 255.0].min
   end
 end
+$PERMIT_CLASS.push Tone

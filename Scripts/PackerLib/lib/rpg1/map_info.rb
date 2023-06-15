@@ -16,3 +16,4 @@ module RPG
     attr_accessor :scroll_y
   end
 end
+$PERMIT_CLASS.push RPG::MapInfo

@@ -10,3 +10,4 @@ module RPG
     end
   end
 end
+$PERMIT_CLASS.push RPG::Class::Learning

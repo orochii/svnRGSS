@@ -10,3 +10,4 @@ module RPG
     attr_accessor :pitch
   end
 end
+$PERMIT_CLASS.push RPG::AudioFile

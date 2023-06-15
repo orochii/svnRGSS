@@ -1,43 +1,24 @@
 module Input
 
   LEFT = :LEFT
-
   UP = :UP
-
   RIGHT = :RIGHT
-
   DOWN = :DOWN
-
   A = :A
-
   B = :B
-
   C = :C
-
   X = :X
-
   Y = :Y
-
   Z = :Z
-
   L = :L
-
   R = :R
-
   SHIFT = :SHIFT
-
   CTRL = :CTRL
-
   ALT = :ALT
-
   F5 = :F5
-
   F6 = :F6
-
   F7 = :F7
-
   F8 = :F8
-
   F9 = :F9
 
   class << self

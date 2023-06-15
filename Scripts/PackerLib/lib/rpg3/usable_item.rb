@@ -67,3 +67,4 @@ module RPG
     attr_accessor :effects
   end
 end
+$PERMIT_CLASS.push RPG::UsableItem

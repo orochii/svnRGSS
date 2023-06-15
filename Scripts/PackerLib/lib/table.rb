@@ -30,3 +30,4 @@ class Table
   end
   attr_accessor(:xsize, :ysize, :zsize, :data)
 end
+$PERMIT_CLASS.push Table

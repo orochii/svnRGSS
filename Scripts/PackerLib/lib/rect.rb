@@ -26,3 +26,4 @@ class Rect
     Rect.new(*s.unpack('i4'))
   end
 end
+$PERMIT_CLASS.push Rect
