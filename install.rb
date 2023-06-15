@@ -33,6 +33,11 @@ def get_script_filename
 	return nil
 end
 
+def sanitize_script_name(origName)
+	_name = origName.sub("▼","")
+	return _name
+end
+
 # =============================================================================================================================================================
 # Main
 # =============================================================================================================================================================
@@ -68,8 +73,9 @@ def run
 	# Process scripts, save as files
 	scripts.each_with_index {|s,i|
 		# num(?), name, contents(zlibed)
+		_cleanName = sanitize_script_name(s[1])
 		_prefix = USE_SCRIPT_IDX ? sprintf("%04d-",i) : ""
-		_name = "#{_prefix}#{s[1]}.rb"
+		_name = "#{_prefix}#{_cleanName}.rb"
 		_newFile = "Scripts/RPG/#{_name}"
 		# Write new file
 		print "\nWriting #{s[0]} : #{s[1]}\n to #{_newFile.green}\n"
