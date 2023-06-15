@@ -1,3 +1,25 @@
+# Check
+def check_rgssver
+    if $RGSS_VER != nil && $RGSS_VER < 1
+        puts "Preconfigured $RGSS_VER = #{$RGSS_VER}".green
+        return
+    end
+    $RGSS_VER = 3
+    entries = Dir.glob("*.r*")
+    if entries.size != 0
+        puts "Found project files:".yellow
+        entries.each {|e|
+            puts e
+        }
+        puts "--------------------".yellow
+        entries.each {|fname|
+            fname.sub(".rxproj") { $RGSS_VER = 1 }
+            fname.sub(".rvproj") { $RGSS_VER = 2 }
+            fname.sub(".rvproj2") { $RGSS_VER = 3 }
+        }
+    end
+    puts "Auto RGSS version: = #{$RGSS_VER}".green
+end
 # I made this dumb so yeah.
 def secure_require(lib)
     begin

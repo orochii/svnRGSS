@@ -5,6 +5,7 @@ secure_require 'yaml'
 # https://github.com/bluepixelmike/rpg-maker-rgss
 # Some parts of the code modified by using Rakudayo's code (see below link).
 #-------------------------------------------------------------------------------------
+check_rgssver
 require_relative "lib/rpg_maker_rgss3.rb"
 
 #-------------------------------------------------------------------------------------
@@ -57,7 +58,7 @@ def yaml_to_data(srcfolder, dstfolder, filename, ext="yaml")
         end
     rescue
         puts "Failed when opening file #{filename.red}!"
-        puts $!.message
+        puts $!.message.red
         return
     end
     # Save as data file
@@ -80,7 +81,8 @@ def data_to_yaml(srcfolder, dstfolder, filename, ext="yaml")
             data = Marshal.load(datafile)
         end
     rescue
-        puts "Failed when opening file #{filename}!"
+        puts "Failed when opening file #{filename.red}!"
+        puts $!.message.red
         return
     end
     # Fix conficts on System
