@@ -5,7 +5,7 @@ def check_rgssver
         return
     end
     $RGSS_VER = 3
-    entries = Dir.glob("*.r*")
+    entries = Dir.glob("*.r*proj*")
     if entries.size != 0
         puts "Found project files:".yellow
         entries.each {|e|
