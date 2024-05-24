@@ -49,9 +49,14 @@ def yaml_to_data(srcfolder, dstfolder, filename, ext="yaml")
     # Open YAML file
     begin
         File.open( filename, "r+" ) do |yamlfile|
-            if YAML::respond_to?(:load_file)
-                data = YAML::load_file(yamlfile, 
-                permitted_classes: $PERMIT_CLASS)
+            __failed__ = false
+            if !__failed__ && YAML::respond_to?(:load_file)
+                begin
+                    data = YAML::load_file(yamlfile, permitted_classes: $PERMIT_CLASS)
+                rescue
+                    __failed__ = true
+                    data = YAML::load(yamlfile)
+                end
             else
                 data = YAML::load(yamlfile)
             end
